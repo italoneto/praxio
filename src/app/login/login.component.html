@@ -1,0 +1,23 @@
+<section class="login">
+  <div class="container">
+      <div class="row justify-content-md-center">
+          <div class="col-5">
+              <h1>Entrar</h1>
+
+              <form (ngSubmit)="login($event)">
+                      <px-input pxSize="md" label="E-mail" class="spc-gravity-xxs"></px-input>
+                      <px-input pxSize="md" label="Senha" class="spc-gravity-xxs"></px-input>
+
+                  <div class="form-group">
+                      <a class="reset-password-link" routerLink="/login">ESQUECEU A SENHA?</a>
+
+                      <px-button pxImpact pxSize="lg" class="spc-gravity-xs">Entrar</px-button>
+                  </div>
+
+                  <a routerLink="/register">Não tem conta? Cadastre-se</a>
+              </form>
+          </div>
+        </div>
+  </div>
+</section>
+

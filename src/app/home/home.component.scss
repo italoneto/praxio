@@ -1,0 +1,303 @@
+@import './../../assets/scss/_variables';
+@import './../../assets/scss/_mixins';
+
+section {
+  &.home {
+    width: 100%;
+    height: 100%;
+    background: url('src/assets/image/bg-front.svg') center top no-repeat;
+    background-size: 70%;
+    background-position-y: -100px;
+    @include display-flex(wrap, center, center);
+    text-align: center;
+    padding: 150px 0;
+
+    h2 {
+      @include fontsize(20);
+      color: $white;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 2px;
+      margin: 30px 0;
+    }
+
+    .btn-saiba-mais {
+      width: 210px;
+      height: 40px;
+      background-color: transparent !important;
+      border: 2px solid $white;
+      @include fontsize(16);
+      color: $white;
+    }
+
+    .cards {
+      @include display-flex;
+      margin-top: 100px;
+
+      .card {
+        width: 297px;
+        height: 400px;
+        background: $white url('src/assets/image/bottom-card.svg') center bottom no-repeat;
+        @include display-flex(wrap, center, center);
+        text-align: center;
+        padding: 20px 25px;
+        border-radius: 10px;
+        box-shadow: 0 10px 35px $light-gray;
+
+        h4 {
+          color: $purple;
+          font-weight: bold;
+          @include fontsize(20);
+        }
+
+        .finger {
+          width: 117px;
+          height: 115px;
+          padding: 10px;
+          background: $white url('src/assets/image/bg-front.svg') center center no-repeat;
+          background-size: contain;
+          @include display-flex(wrap, center, center);
+          margin: 40px 0;
+
+          img {
+            width: 42px;
+            height: 42px;
+          }
+        }
+
+        h5 {
+          @include fontsize(16);
+          color: $dark-gray;
+          line-height: 20px;
+        }
+
+        .btn-saiba-mais {
+          width: 100%;
+          height: 36px;
+          background-color: transparent;
+          border: 1px solid $light-gray;
+          @include fontsize(14);
+          color: $dark-gray;
+          margin-top: 15px;
+        }
+
+        &.center {
+          height: 480px;
+          margin: 0 -15px;
+          position: relative;
+          z-index: 1;
+
+          .finger {
+            width: 166px;
+            height: 163px;
+            padding: 10px;
+            margin: 30px 0;
+          }
+
+          .btn-saiba-mais {
+            background-color: $purple !important;
+            border: 1px solid $purple;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  height: 50vh;
+  background: $white url('src/assets/image/bg-front-right.svg') right bottom no-repeat;
+  background-size: 50%;
+  @include display-flex(wrap, center, center);
+  border-top: 1px solid $light-gray-2;
+
+  nav {
+    width: 100%;
+    @include display-flex(wrap, flex-start, flex-start);
+
+    .col-nav {
+      width: 25%;
+    }
+
+    a {
+      @include fontsize(16);
+      color: $gray-3 !important;
+      text-align: left;
+      line-height: 45px;
+      @include transition;
+
+      &:hover {
+        color: $gray;
+        @include transition;
+      }
+    }
+  }
+}
+
+.btn-logout {
+  width: 124px;
+  height: 36px;
+  background-color: transparent;
+  border: 2px solid $gray-2;
+  border-radius: 30px;
+  @include fontsize(16);
+  font-weight: bold;
+  color: $dark-gray;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: .5s;
+
+  &:hover {
+    background-color: $gray-2;
+    //box-shadow: 0 10px 35px $light-gray;
+    transition: .5s;
+  }
+}
+
+@media (max-width: 1100px) {
+  section {
+    &.home {
+      padding: 100px 0;
+
+      .logo-front-test {
+        width: 180px;
+      }
+
+      h2 {
+        @include fontsize(14);
+        margin: 30px 0;
+      }
+
+      .cards {
+        @include display-flex;
+        margin-top: 100px;
+
+        .card {
+          width: 230px;
+          height: 360px;
+          padding: 10px 15px;
+
+          h4 {
+            @include fontsize(14);
+          }
+
+          .finger {
+            width: 110px;
+            height: 108px;
+            margin: 30px 0;
+
+            img {
+              width: 38px;
+              height: 38px;
+            }
+          }
+
+          h5 {
+            @include fontsize(12);
+            line-height: 16px;
+          }
+
+          &.center {
+            height: 430px;
+
+            .finger {
+              width: 160px;
+              height: 157px;
+              margin: 20px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  section {
+    &.home {
+      background-size: cover;
+      background-position-y: -50px;
+      padding: 100px 0;
+
+      .logo-front-test {
+        width: 150px;
+      }
+
+      .col-sm-6 {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      h2 {
+        @include fontsize(12);
+        margin: 25px 0;
+      }
+
+      .cards {
+        @include display-flex();
+        margin-top: 100px;
+
+        .card {
+          width: 300px;
+          height: 360px;
+          padding: 10px 15px;
+
+          h4 {
+            width: 100%;
+            @include fontsize(14);
+          }
+
+          .finger {
+            width: 110px;
+            height: 108px;
+            margin: 30px 0;
+
+            img {
+              width: 38px;
+              height: 38px;
+            }
+          }
+
+          h5 {
+            @include fontsize(12);
+            line-height: 16px;
+          }
+
+          &.center {
+            height: 400px;
+            margin: 20px 0;
+
+            .finger {
+              width: 160px;
+              height: 157px;
+              margin: 20px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: auto;
+
+    nav {
+      width: 100%;
+      padding: 50px 0 50px 25px;
+
+      .col-nav {
+        width: 100%;
+      }
+
+      a {
+        @include fontsize(14);
+        line-height: 40px;
+      }
+    }
+  }
+}

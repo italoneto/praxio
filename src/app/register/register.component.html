@@ -1,0 +1,78 @@
+<section class="register">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Cadastrar</h1>
+
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                  <div class="col col-lg-6">
+                      <h2>Informações Pessoais</h2>
+
+                      <div class="form-group">
+                          <px-input pxSize="md" label="Nome/Razão Social" formControlName="nomeRazaoSocial"></px-input>
+                          <app-validators-errors [control]="registerForm.get('nomeRazaoSocial')"></app-validators-errors>
+                      </div>
+
+                      <div class="wrap">
+                          <div class="form-group half">
+                              <px-input pxSize="md" label="CPF/CNPJ" formControlName="cpfCnpj"></px-input>
+                              <app-validators-errors [control]="registerForm.get('cpfCnpj')"></app-validators-errors>
+                          </div>
+
+                          <div class="form-group half">
+                              <px-input pxSize="md" label="Telefone" formControlName="telefone"></px-input>
+                              <app-validators-errors [control]="registerForm.get('telefone')"></app-validators-errors>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <px-input pxSize="md" label="E-mail" formControlName="email"></px-input>
+                          <app-validators-errors [control]="registerForm.get('email')"></app-validators-errors>
+                      </div>
+
+                      <div class="form-group">
+                          <px-input pxSize="md" label="Senha" formControlName="senha"></px-input>
+                          <app-validators-errors [control]="registerForm.get('senha')"></app-validators-errors>
+                      </div>
+                  </div>
+
+                  <div class="col col-lg-6">
+                      <h2>Endereço</h2>
+
+                      <div class="wrap">
+                          <div class="form-group small">
+                              <px-input pxSize="md" label="CEP" formControlName="cep"></px-input>
+                              <app-validators-errors [control]="registerForm.get('cep')"></app-validators-errors>
+                          </div>
+
+                          <div class="form-group medium">
+                              <px-input pxSize="md" label="Logradouro" formControlName="logradouro"></px-input>
+                              <app-validators-errors [control]="registerForm.get('logradouro')"></app-validators-errors>
+                          </div>
+                      </div>
+
+                      <div class="wrap">
+                          <div class="form-group small">
+                              <px-input pxSize="md" label="Número" formControlName="numero"></px-input>
+                              <app-validators-errors [control]="registerForm.get('numero')"></app-validators-errors>
+                          </div>
+
+                          <div class="form-group medium">
+                              <px-input pxSize="md" label="Bairro" formControlName="bairro"></px-input>
+                              <app-validators-errors [control]="registerForm.get('bairro')"></app-validators-errors>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col col-lg-12">
+                      <button class="btn btn-primary" [disabled]="registerForm.invalid">Cadastrar</button>
+                      <px-button pxImpact pxSize="lg" class="spc-gravity-xs">Cadastrar</px-button>
+
+                      <a routerLink="/login">Já tem uma conta? Faça login</a>
+                  </div>
+              </form>
+            </div>
+        </div>
+    </div>
+</section>
